@@ -14,4 +14,19 @@
     <!--开启注解扫描-->
     <context:component-scan base-package="com.KTP"/>
 
+    <!--视图解析器-->
+    <bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <!--JSP文件所在目录-->
+        <property name="prefix" value="/WEB-INF/admin/"/>
+        <!--JSP文件后缀名-->
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+    <!--过滤静态资源-->
+    <mvc:resources mapping="/statics/**" location="/WEB-INF/statics/"/>
+    <mvc:default-servlet-handler/>
+
+    <!--开启SpringMVC注解支持-->
+    <mvc:annotation-driven/>
+
 </beans>
