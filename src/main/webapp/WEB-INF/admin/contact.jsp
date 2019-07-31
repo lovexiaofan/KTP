@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: zxguo
-  Date: 2019-07-30
-  Time: 20:53
+  Date: 2019-07-31
+  Time: 20:01
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -15,32 +15,16 @@
     <link rel="stylesheet" type="text/css" href="../statics/css/reset.css"/>
     <script type="text/javascript" src="../statics/js/jquery-1.8.3.min.js"></script>
     <script type="text/javascript" src="../statics/js/js_z.js"></script>
-    <script type="text/javascript" src="../statics/js/banner.js"></script>
     <link rel="stylesheet" type="text/css" href="../statics/css/thems.css">
-    <script type="application/javascript">
-        $(function(){
-            $('#owl-demo').owlCarousel({
-                items: 1,
-                navigation: true,
-                navigationText: ["上一个","下一个"],
-                autoPlay: true,
-                stopOnHover: true
-            }).hover(function(){
-                $('.owl-buttons').show();
-            }, function(){
-                $('.owl-buttons').hide();
-            });
-        });
-    </script>
 </head>
 
-<body class="s_m">
+<body>
 <!--头部-->
 <div class="head clearfix">
-    <div class="logo"><img src="../statics/images/logo.png" alt=""/></div>
+    <div class="logo"><a><img src="../statics/images/logo.png" alt=""/></a></div>
     <ul class="nav clearfix">
-        <li class="now" style="cursor: hand">
-            <a>
+        <li>
+            <a href="homePage">
                 <em>首页</em>
                 HOME
             </a>
@@ -57,8 +41,8 @@
                 SERVICE
             </a>
         </li>
-        <li>
-            <a href="about">
+        <li class="now" style="cursor: hand">
+            <a>
                 <em>关于我们</em>
                 ABOUT US
             </a>
@@ -82,52 +66,44 @@
 </div>
 <!--头部-->
 <!--幻灯片-->
-<div id="banner" class="banner">
-    <div id="owl-demo" class="owl-carousel">
-        <a class="item" style="background-image:url(../statics/upload/bh4.jpg)">
-            <img src="../statics/upload/bh4.jpg" alt="">
-        </a>
-    </div>
-</div>
+<div class="banner_s"><img src="../statics/upload/bh4.jpg" alt=""/></div>
 <!--幻灯片-->
-<div class="bg_a">
-    <div class="t_news">
-        <div class="t_news">
-            <b>热点新闻：</b>
-            <ul class="news_li">
-                <li style="cursor: hand"><a>最好用的学生学习管理工具</a></li>
-                <li style="cursor: hand"><a>最方便的教师课程管理工具</a></li>
-                <li style="cursor: hand"><a>最直接的师生交流问答工具</a></li>
-                <li style="cursor: hand"><a>最优秀的课程作业发布工具</a></li>
-            </ul>
-            <ul class="swap"></ul>
+<div class="bg_b">
+    <div class="pst">
+        您当前的位置：<a style="cursor: hand">关于我们</a>> <a style="cursor: hand">联系我们</a>
+    </div>
+</div>
+<div class="scd clearfix">
+    <div class="scd_l">
+        <div class="l_name">
+            <img src="../statics/images/name_2.png" width="140" height="48" alt=""/>
+            <i>&nbsp;</i>
+        </div>
+        <ul class="s_nav">
+            <li>
+                <a href="about">成员介绍</a>
+            </li>
+            <li class="on">
+                <a href="contact">联系我们</a>
+            </li>
+        </ul>
+    </div>
+    <div class="scd_r">
+        <div class="r_top"><span>联系我们</span></div>
+        <div class="scd_m">
+            <dl class="contact clearfix">
+                <dt><img src="../statics/upload/ditu.JPG" alt="" style="width: 90%;height: 90%"/></dt>
+                <dd>
+                    <h1>上海市上大晓凡有限公司</h1>
+                    <p><span>地址：</span>上海市宝山区南陈路333号计算机工程与科学学院</p>
+                    <p><span>服务热线：</span> 400-888-8888</p>
+                    <p><span>传真：</span>0755-88888888</p>
+                    <p><span>网址：</span>http://www.xuexipai.com</p>
+                </dd>
+            </dl>
         </div>
     </div>
 </div>
-<div class="space_hx">&nbsp;</div>
-<ul class="i_ma clearfix">
-    <li>
-        <div class="tu"><a><img src="../statics/upload/bh1.JPG" alt=""/></a></div>
-        <div class="wen">
-            <div class="name"><a>在线考勤</a></div>
-            <div class="des">用学习派最大的好处就是教师在上课的过程中可以直接发布签到，统计上课人数，不需要浪费时间一一点名。</div>
-        </div>
-    </li>
-    <li>
-        <div class="tu"><a><img src="../statics/upload/bh2.JPG" alt=""/></a></div>
-        <div class="wen">
-            <div class="name"><a>课程讨论</a></div>
-            <div class="des">用学习派最大的好处就是在学习的过程中，随时跟老师同学们进行沟通和分享，获得别人的指导和鼓励。</div>
-        </div>
-    </li>
-    <li>
-        <div class="tu"><a><img src="../statics/upload/bh3.JPG" alt=""/></a></div>
-        <div class="wen">
-            <div class="name"><a>作业管理</a></div>
-            <div class="des">用学习派最大的好处就是教师可以在线发布作业，同学们完成后将电子版作业上传，由助教负责统计和整理。</div>
-        </div>
-    </li>
-</ul>
 <div class="space_hx">&nbsp;</div>
 <div class="line">&nbsp;</div>
 <ul class="f_nav clearfix">
@@ -167,7 +143,7 @@
 <div class="f_bg">
     <div class="foot clearfix">
         <div class="f_r">
-            版权所有上海市上大晓凡有限公司 沪ICP备10011234号
+            版权所有上海市上大科技有限公司 沪ICP备10011234号
         </div>
     </div>
 </div>

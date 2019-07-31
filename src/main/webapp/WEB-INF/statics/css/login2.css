@@ -2,10 +2,10 @@ html {
 	
 }
 body {
-	font-family:"Microsoft Yahei";
+	font-family: "Microsoft Yahei", serif;
 	font-size:12px;
 	margin:0;
-background: #fff url(../images/1.jpg) 50% 0 no-repeat;}
+background: #fff url(../images/1.jpg) 100% 100% no-repeat;}
 ul {
 	padding:0;
 	margin:0;
@@ -37,7 +37,7 @@ input::-ms-clear {
 	height:50px;
 	border-bottom:1px solid #e2e2e2;
 	position:relative;
-	font-family:"Microsoft Yahei";
+	font-family: "Microsoft Yahei", serif;
 }
 .header .switch {
 	height:45px;
@@ -74,7 +74,7 @@ input::-ms-clear {
 }
 #switch_bottom {
 	position:absolute;
-	bottom:-1px;_bottom:-2px;
+	bottom:0;_bottom:0;
 	border-bottom:2px solid #848484;
 }
 
@@ -98,7 +98,7 @@ input::-ms-clear {
 	height:42px;
 	font-size:16px;
 	line-height:42px;
-	font-family:"Hiragino Sans GB", "Microsoft Yahei";
+	font-family: "Hiragino Sans GB", "Microsoft Yahei", serif;
 }
 .web_login .input-tips2 {
 	float:left;
@@ -110,7 +110,7 @@ input::-ms-clear {
 	margin-top:10px;
 	clear:both;
 	line-height:30px;
-	font-family:"Hiragino Sans GB", "Microsoft Yahei";
+	font-family: "Hiragino Sans GB", "Microsoft Yahei", serif;
 }
 .web_login .inputOuter {
 	width:200px;
@@ -129,11 +129,11 @@ input::-ms-clear {
 	width:200px;
 	height:38px;
 	padding-left:5px;
-	line-height:30px;line-height:38px;
+	line-height:30px;
 	border:1px solid #D7D7D7;
 	background:#fff;
 	color:#333;border-radius:2px;
-	font-family:Verdana, Tahoma, Arial;
+	font-family: Verdana, Tahoma, Arial, serif;
 	font-size:16px;
 	ime-mode:disabled;
 }
@@ -146,7 +146,7 @@ input::-ms-clear {
 	border:1px solid #D7D7D7;
 	background:#fff;
 	color:#333;border-radius:2px;
-	font-family:Verdana, Tahoma, Arial;
+	font-family: Verdana, Tahoma, Arial, serif;
 	font-size:16px;
 	ime-mode:disabled;
 }
@@ -174,7 +174,7 @@ input::-ms-clear {
 	border:1px #CCCCCC solid;
 	margin-top:10px;margin-bottom:5px;
 	text-align:center;
-	font-family:"Hiragino Sans GB", "Microsoft Yahei";
+	font-family: "Hiragino Sans GB", "Microsoft Yahei", serif;
 }
 .login {
 	background-color:#ffffff;
@@ -194,7 +194,8 @@ box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, .3);}
 
 .web_login{padding-bottom:20px;}
 
-.jianyi{color:#fff;text-align:center;margin-top:25px;color:#B3B8C4;}
+.jianyi{
+	text-align:center;margin-top:25px;color:#B3B8C4;}
 .reg_form li {
 height: 55px;
 }
@@ -203,7 +204,7 @@ margin-top: 15px;
 margin-bottom: 10px;border:1px solid #eee;border-radius:3px;
 }
 .web_login input.inputstyle2:focus, .web_login input.inputstyle:focus {
-border: 1px solid #5796f;
+border: 1px solid;
 box-shadow: 0 0 0;
 }
 .web_login .reg_form {
