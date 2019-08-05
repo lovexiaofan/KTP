@@ -5,7 +5,7 @@
   Time: 20:06
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
     <title>学习派 - 注册登录</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">

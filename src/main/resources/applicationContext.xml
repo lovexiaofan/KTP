@@ -51,7 +51,7 @@
     </tx:advice>
     <!--配置AOP增强-->
     <aop:config>
-        <aop:advisor advice-ref="txAdvice" pointcut="execution(* com.KTP.service.impl.*ServiceImpl.*(..))"/>
+        <aop:advisor advice-ref="txAdvice" pointcut="execution(* com.KTP.service.*Service.*(..))"/>
     </aop:config>
 
 </beans>

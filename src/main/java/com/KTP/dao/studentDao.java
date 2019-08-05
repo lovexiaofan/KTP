@@ -1,10 +1,10 @@
 package com.KTP.dao;
 
 import com.KTP.model.studentModel;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
-import org.springframework.stereotype.Repository;
 
-@Repository
+@Mapper
 public interface studentDao {
 
     //查询学生登陆密码
