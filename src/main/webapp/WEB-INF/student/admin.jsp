@@ -6,7 +6,6 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
@@ -33,7 +32,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="homePage"><i class="fa fa-comments"></i> <strong>学习派 </strong></a>
+            <a class="navbar-brand"><i class="fa fa-comments"></i><strong>  ${sname}</strong></a>
         </div>
 
         <ul class="nav navbar-top-links navbar-right">
@@ -141,12 +140,11 @@
     </nav>
     <!--/. NAV TOP  -->
     <nav class="navbar-default navbar-side" role="navigation">
-        <div id="sideNav" href=""><i class="fa fa-caret-right"></i></div>
         <div class="sidebar-collapse">
             <ul class="nav" id="main-menu">
 
                 <li>
-                    <a class="active-menu" href="../Student/Admin.jsp"><i class="fa fa-dashboard"></i> 签到</a>
+                    <a class="active-menu" href="studentAdmin"><i class="fa fa-dashboard"></i> 签到</a>
                 </li>
                 <li>
                     <a href="../Student/Notice.jsp"><i class="fa fa-qrcode"></i> 笔记 & 公告</a>
@@ -214,12 +212,12 @@
 </body>
 
 <script>
-    var openURL1="../Student/Change.jsp";
+    var openURL1="studentChange";
     var openURL2="../Student/EnterCourse.jsp";
     var openURL3="../Student/QuitCourse.jsp";
     var openURL4="../Student/MyCourse.jsp";
     var openURL6="../Student/Sign.jsp";
-    var iWidth1=290;
+    var iWidth1=300;
     var iWidth2=550;
     var iHeight1=310;
     var iHeight2=100;

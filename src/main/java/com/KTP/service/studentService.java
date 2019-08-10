@@ -5,6 +5,8 @@ import com.KTP.model.studentModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class studentService {
 
@@ -32,6 +34,31 @@ public class studentService {
         studentModel.setUni(uni);
         studentModel.setAcademy(academy);
         studentDao.insertStudentInfo(studentModel);
+    }
+
+    //查询学生个人主页姓名
+    public String getStudentAdminSname(String sno){
+        studentModel studentModel = new studentModel();
+        studentModel.setSno(sno);
+        return studentDao.getStudentAdminSname(studentModel);
+    }
+
+    //查询学生全部信息
+    public List<studentModel> getStudentChangeInfo(String sno){
+        studentModel studentModel = new studentModel();
+        studentModel.setSno(sno);
+        return studentDao.getStudentChangeInfo(studentModel);
+    }
+
+    //更新学生信息
+    public void updateStudentInfo(String password, String tel, String uni, String academy, String sno){
+        studentModel studentModel = new studentModel();
+        studentModel.setSno(sno);
+        studentModel.setPassword(password);
+        studentModel.setTel(tel);
+        studentModel.setUni(uni);
+        studentModel.setAcademy(academy);
+        studentDao.updateStudentInfo(studentModel);
     }
 
 }

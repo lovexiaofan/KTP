@@ -4,7 +4,6 @@ import com.KTP.service.studentService;
 import com.KTP.service.teacherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import javax.servlet.http.HttpServletRequest;
@@ -30,7 +29,7 @@ public class loginOrRegisterController {
     }
 
     @RequestMapping(path = "/loginOrRegister")
-    public String LoginOrRegister(@RequestParam(value = "choose", required = false) String cho, @RequestParam("lr") String lr, HttpServletRequest request, Model model){
+    public String LoginOrRegister(@RequestParam(value = "choose", required = false) String cho, @RequestParam("lr") String lr, HttpServletRequest request){
         if ("登录".equals(lr)){
             String no = request.getParameter("no");
             String pass = request.getParameter("password");
@@ -42,7 +41,7 @@ public class loginOrRegisterController {
                         return "admin/loginOrRegister";
                     }
                     if (pass.equals(password)){
-                        model.addAttribute("cno", no);
+                        request.getSession().setAttribute("cno", no);
                         return "redirect:/teacherAdmin";
                     }
                     else {
@@ -62,7 +61,7 @@ public class loginOrRegisterController {
                         return "admin/loginOrRegister";
                     }
                     if (pass.equals(password)){
-                        model.addAttribute("sno", no);
+                        request.getSession().setAttribute("sno", no);
                         return "redirect:/studentAdmin";
                     }
                     else {
@@ -98,7 +97,7 @@ public class loginOrRegisterController {
             {
                 try{
                     teacherService.insertTeacherInfo(rno, rname, rpass, rtel, rsex, rschool, racademy);
-                    model.addAttribute("cno", rno);
+                    request.getSession().setAttribute("cno", rno);
                     return "redirect:/teacherAdmin";
                 }
                 catch(Exception e){
@@ -110,7 +109,7 @@ public class loginOrRegisterController {
             {
                 try{
                     studentService.insertStudentInfo(rno, rname, rpass, rtel, rsex, rschool, racademy);
-                    model.addAttribute("sno", rno);
+                    request.getSession().setAttribute("sno", rno);
                     return "redirect:/studentAdmin";
                 }
                 catch(Exception e){
