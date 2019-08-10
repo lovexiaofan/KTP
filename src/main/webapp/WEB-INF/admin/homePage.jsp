@@ -64,7 +64,7 @@
             </a>
         </li>
         <li>
-            <a href="loginOrRegister" target="_blank">
+            <a href="lr" target="_blank">
                 <em>注册登录</em>
                 LOGIN/REGISTER
             </a>

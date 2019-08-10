@@ -8,7 +8,7 @@ public class aboutController {
 
     @RequestMapping(path = "/about")
     public String toAbout(){
-        return "about";
+        return "admin/about";
     }
 
 }

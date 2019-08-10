@@ -8,7 +8,7 @@ public class homePageController {
 
     @RequestMapping(path = "/homePage")
     public String toHomePage(){
-        return "homePage";
+        return "admin/homePage";
     }
 
 }

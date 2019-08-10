@@ -17,7 +17,7 @@
     <!--视图解析器-->
     <bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <!--JSP文件所在目录-->
-        <property name="prefix" value="/WEB-INF/admin/"/>
+        <property name="prefix" value="/WEB-INF/"/>
         <!--JSP文件后缀名-->
         <property name="suffix" value=".jsp"/>
     </bean>

@@ -8,7 +8,7 @@ public class contactController {
 
     @RequestMapping(path = "/contact")
     public String toContact(){
-        return "contact";
+        return "admin/contact";
     }
 
 }

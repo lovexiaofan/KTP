@@ -14,11 +14,24 @@ public class studentService {
         this.studentDao = studentDao;
     }
 
-    //查询学生登陆密码
+    //查询学生登录密码
     public String getStudentPassword(String sno){
         studentModel studentModel = new studentModel();
         studentModel.setSno(sno);
         return studentDao.getStudentPassword(studentModel);
+    }
+
+    //添加学生个人信息
+    public void insertStudentInfo(String sno, String sname, String password, String tel, String sex, String uni, String academy){
+        studentModel studentModel = new studentModel();
+        studentModel.setSno(sno);
+        studentModel.setSname(sname);
+        studentModel.setPassword(password);
+        studentModel.setTel(tel);
+        studentModel.setSex(sex);
+        studentModel.setUni(uni);
+        studentModel.setAcademy(academy);
+        studentDao.insertStudentInfo(studentModel);
     }
 
 }
