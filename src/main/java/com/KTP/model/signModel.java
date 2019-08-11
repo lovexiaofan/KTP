@@ -5,7 +5,6 @@ import java.io.Serializable;
 public class signModel implements Serializable {
 
     private String courseno;
-    private String cno;
     private String sno;
     private String signcode;
 
@@ -15,14 +14,6 @@ public class signModel implements Serializable {
 
     public void setCourseno(String courseno) {
         this.courseno = courseno;
-    }
-
-    public String getCno() {
-        return cno;
-    }
-
-    public void setCno(String cno) {
-        this.cno = cno;
     }
 
     public String getSno() {

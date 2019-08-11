@@ -2,7 +2,7 @@ package com.KTP.model;
 
 import java.io.Serializable;
 
-public class coursestudentModel implements Serializable {
+public class courseStudentModel implements Serializable {
 
     private String courseno;
     private String cno;
