@@ -31,4 +31,11 @@ public class courseService {
         return courseDao.getCourseCno(courseModel);
     }
 
+    //查询教师开设的课程信息
+    public List<courseModel> getCourseTeacherInfo(String cno){
+        courseModel courseModel = new courseModel();
+        courseModel.setCno(cno);
+        return courseDao.getCourseTeacherInfo(courseModel);
+    }
+
 }

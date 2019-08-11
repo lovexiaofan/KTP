@@ -18,4 +18,8 @@ public interface courseDao {
     @Select("select cno from course where courseno = #{courseno}")
     public String getCourseCno(courseModel courseModel);
 
+    //查询教师开设的课程信息
+    @Select("select courseno, coursename, coursetime from course where cno = #{cno}")
+    public List<courseModel> getCourseTeacherInfo(courseModel courseModel);
+
 }

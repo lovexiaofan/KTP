@@ -37,7 +37,7 @@
 
         <ul class="nav navbar-top-links navbar-right">
             <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#">
                     <i class="fa fa-envelope fa-fw"></i> <i class="fa fa-caret-down"></i>
                 </a>
                 <ul class="dropdown-menu dropdown-messages">
@@ -64,7 +64,7 @@
             </li>
             <!-- /.dropdown -->
             <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#">
                     <i class="fa fa-tasks fa-fw"></i> <i class="fa fa-caret-down"></i>
                 </a>
                 <ul class="dropdown-menu dropdown-tasks">
@@ -96,7 +96,7 @@
             </li>
             <!-- /.dropdown -->
             <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#">
                     <i class="fa fa-bell fa-fw"></i> <i class="fa fa-caret-down"></i>
                 </a>
                 <ul class="dropdown-menu dropdown-alerts">
@@ -121,13 +121,13 @@
             </li>
             <!-- /.dropdown -->
             <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#">
                     <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                 </a>
                 <ul class="dropdown-menu dropdown-user">
                     <li><a href="studentChange" target="_blank"><i class="fa fa-user fa-fw"></i> 个人信息</a>
                     </li>
-                    <li><a><i class="fa fa-gear fa-fw"></i> 设置</a>
+                    <li><a href="#"><i class="fa fa-gear fa-fw"></i> 设置</a>
                     </li>
                     <li class="divider"></li>
                     <li><a href="lr"><i class="fa fa-sign-out fa-fw"></i> 登出</a>
@@ -182,6 +182,7 @@
                                         <input type="text" name="kh" style="margin-top: 10px"/>
                                     </label>
                                 </div>
+                                <br/>
                                 <div class="mb-3">
                                     <span>签 到 码:</span>
                                     <label>

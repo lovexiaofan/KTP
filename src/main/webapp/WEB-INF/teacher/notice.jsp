@@ -1,16 +1,17 @@
 <%--
   Created by IntelliJ IDEA.
   User: zxguo
-  Date: 2019-08-10
-  Time: 14:09
+  Date: 2019-08-11
+  Time: 13:09
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>教师个人主页</title>
+    <title>通知公告</title>
     <!-- Bootstrap Styles-->
     <link href="../statics/css/bootstrap.css" rel="stylesheet" />
     <!-- FontAwesome Styles-->
@@ -22,6 +23,7 @@
     <!-- Google Fonts-->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 </head>
+
 <body>
 <div id="wrapper">
     <nav class="navbar navbar-default top-navbar" role="navigation">
@@ -60,10 +62,10 @@
         <div class="sidebar-collapse">
             <ul class="nav" id="main-menu">
                 <li>
-                    <a class="active-menu" href="teacherAdmin"><i class="fa fa-dashboard"></i> 签到</a>
+                    <a href="teacherAdmin"><i class="fa fa-dashboard"></i> 签到</a>
                 </li>
                 <li>
-                    <a href="teacherNotice"><i class="fa fa-qrcode"></i> 笔记 & 公告</a>
+                    <a class="active-menu" href="teacherNotice"><i class="fa fa-qrcode"></i> 笔记 & 公告</a>
                 </li>
                 <li>
                     <a href="teacherOpenCourse"><i class="fa fa-dashboard"></i> 开课</a>
@@ -81,21 +83,52 @@
         </div>
     </nav>
     <!-- /. NAV SIDE  -->
-    <div id="page-wrapper">
+    <div id="page-wrapper" >
         <div id="page-inner">
             <div class="row">
                 <div class="col-md-12">
                     <h1 class="page-header">
-                        安排签到<small>考勤签到</small>
+                        笔记 & 公告 <small>Notes and notice</small>
                     </h1>
-                    <ol class="breadcrumb">
-                        <a href="javascript:void(0)" class="btn btn-primary" onclick=qdm()>输入签到码</a>
-                        <a href="javascript:void(0)" class="btn btn-primary" onclick=qdqk()>查看签到情况</a>
-                    </ol>
+                </div>
+            </div>
+            <!-- /. ROW  -->
+            <div class="row">
+                <div class="col-md-4 col-sm-4">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            材料学
+                        </div>
+                        <div class="panel-body">
+                            <p>材料学是建筑学的基础，需要给建筑打下坚实的基础</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            操作系统
+                        </div>
+                        <div class="panel-body">
+                            <p>操作系统是计算机操作的系统，包含Windows、Linux、Mac OS</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            民俗学
+                        </div>
+                        <div class="panel-body">
+                            <p>我已经看清了他的原点，民俗学神探潘朵拉</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+        <!-- /. PAGE INNER  -->
     </div>
+    <!-- /. PAGE WRAPPER  -->
 </div>
 <!-- /. WRAPPER  -->
 <!-- JS Scripts-->
@@ -105,47 +138,7 @@
 <script src="../statics/js/bootstrap.min.js"></script>
 <!-- Metis Menu Js -->
 <script src="../statics/js/jquery.metisMenu.js"></script>
-<!-- Morris Chart Js -->
-<script src="../statics/js/morris/raphael-2.1.0.min.js"></script>
-<script src="../statics/js/morris/morris.js"></script>
-<script src="../statics/js/easypiechart.js"></script>
-<script src="../statics/js/easypiechart-data.js"></script>
 <!-- Custom Js -->
 <script src="../statics/js/custom-scripts.js"></script>
 </body>
-<script>
-    var openURL3="../Teacher/CloseCourse.jsp";
-    var openURL5="../Teacher/MyStudent.jsp";
-    var openURL6="../Teacher/SignCode.jsp";
-    var openURL7="../Teacher/SignStatusMid.jsp";
-    var iWidth1=290;
-    var iWidth2=550;
-    var iHeight1=310;
-    var iHeight2=200;
-    var iHeight3=100;
-    var iHeight4=130;
-    var iTop1 = (window.screen.availHeight-30-iHeight1)/2; //获得窗口的垂直位置;
-    var iTop2 = (window.screen.availHeight-30-iHeight2)/2; //获得窗口的垂直位置;
-    var iTop3 = (window.screen.availHeight-30-iHeight3)/2; //获得窗口的垂直位置;
-    var iTop4 = (window.screen.availHeight-30-iHeight4)/2; //获得窗口的垂直位置;
-    var iLeft1 = (window.screen.availWidth-10-iWidth1)/2; //获得窗口的水平位置;
-    var iLeft2 = (window.screen.availWidth-10-iWidth2)/2; //获得窗口的水平位置;
-    function gk()
-    {
-        window.open(openURL3,"","height="+iHeight3+", width="+iWidth1+", top="+iTop3+", left="+iLeft1);
-    }
-    function ws()
-    {
-        window.open(openURL5,"","height="+iHeight1+", width="+iWidth1+", top="+iTop1+", left="+iLeft1);
-    }
-    function qdm()
-    {
-        window.open(openURL6,"","height="+iHeight4+", width="+iWidth1+", top="+iTop4+", left="+iLeft1);
-    }
-    function qdqk()
-    {
-        window.open(openURL7,"","height="+iHeight1+", width="+iWidth1+", top="+iTop1+", left="+iLeft1);
-    }
-</script>
-
 </html>

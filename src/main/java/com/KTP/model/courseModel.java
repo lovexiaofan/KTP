@@ -8,7 +8,6 @@ public class courseModel implements Serializable {
     private String coursename;
     private String cno;
     private String coursetime;
-    private String entercode;
 
     public String getCourseno() {
         return courseno;
@@ -40,14 +39,6 @@ public class courseModel implements Serializable {
 
     public void setCoursetime(String coursetime) {
         this.coursetime = coursetime;
-    }
-
-    public String getEntercode() {
-        return entercode;
-    }
-
-    public void setEntercode(String entercode) {
-        this.entercode = entercode;
     }
 
 }
