@@ -35,7 +35,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand"><i class="fa fa-comments"></i><strong>   ${sname}</strong></a>
+            <a class="navbar-brand"><i class="fa fa-comments"></i><strong>   ${cname}</strong></a>
         </div>
 
         <ul class="nav navbar-top-links navbar-right">
@@ -72,7 +72,7 @@
                     <a class="active-menu" href="teacherOpenCourse"><i class="fa fa-dashboard"></i> 开课</a>
                 </li>
                 <li>
-                    <a href="javascript:void(0)" onclick=gk()><i class="fa fa-qrcode"></i> 关课</a>
+                    <a href="teacherCloseCourse"><i class="fa fa-qrcode"></i> 关课</a>
                 </li>
                 <li>
                     <a href="teacherMyCourse"><i class="fa fa-dashboard"></i> 我的课程</a>

@@ -38,4 +38,21 @@ public class courseService {
         return courseDao.getCourseTeacherInfo(courseModel);
     }
 
+    //新增教师课程
+    public void insertOpenCourse(String courseno, String coursename, String cno, String coursetime){
+        courseModel courseModel = new courseModel();
+        courseModel.setCourseno(courseno);
+        courseModel.setCoursename(coursename);
+        courseModel.setCno(cno);
+        courseModel.setCoursetime(coursetime);
+        courseDao.insertOpenCourse(courseModel);
+    }
+
+    //删除教师课程
+    public void deleteCloseCourse(String courseno){
+        courseModel courseModel = new courseModel();
+        courseModel.setCourseno(courseno);
+        courseDao.deleteCloseCourse(courseModel);
+    }
+
 }

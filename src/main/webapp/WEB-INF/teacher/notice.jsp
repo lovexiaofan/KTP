@@ -71,7 +71,7 @@
                     <a href="teacherOpenCourse"><i class="fa fa-dashboard"></i> 开课</a>
                 </li>
                 <li>
-                    <a href="javascript:void(0)" onclick=gk()><i class="fa fa-qrcode"></i> 关课</a>
+                    <a href="teacherCloseCourse"><i class="fa fa-qrcode"></i> 关课</a>
                 </li>
                 <li>
                     <a href="teacherMyCourse"><i class="fa fa-dashboard"></i> 我的课程</a>
