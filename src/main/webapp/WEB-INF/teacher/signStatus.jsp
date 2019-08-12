@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: zxguo
@@ -10,7 +11,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>教师个人主页</title>
+    <title>学生签到情况</title>
     <!-- Bootstrap Styles-->
     <link href="../statics/css/bootstrap.css" rel="stylesheet" />
     <!-- FontAwesome Styles-->
@@ -81,20 +82,36 @@
         </div>
     </nav>
     <!-- /. NAV SIDE  -->
-    <div id="page-wrapper">
+    <div id="page-wrapper" >
         <div id="page-inner">
-            <div class="row">
-                <div class="col-md-12">
-                    <h1 class="page-header">
-                        安排签到<small>考勤签到</small>
-                    </h1>
-                    <ol class="breadcrumb">
-                        <a href="teacherSignEnter" class="btn btn-primary">输入签到码</a>
-                        <a href="teacherSignStatus" class="btn btn-primary">查看签到情况</a>
-                    </ol>
+            <div class="container-fluid">
+                <div class="row">
+                    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+                        <h2>学生签到情况</h2>
+                        <div class="table-responsive">
+                            <table class="table table-striped table-sm">
+                                <thead>
+                                <tr>
+                                    <th>课程号</th>
+                                    <th>学生名</th>
+                                    <th>签到情况</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <c:forEach items="${signInfo}" var="signInfo">
+                                <tr>
+                                    <td>${signInfo.courseno}</td>
+                                    <td>${signInfo.sname}</td>
+                                    <td>${signInfo.signcode}</td>
+                                    </c:forEach>
+                                </tbody>
+                            </table>
+                        </div>
+                    </main>
                 </div>
             </div>
         </div>
+        <!-- /. PAGE INNER  -->
     </div>
 </div>
 <!-- /. WRAPPER  -->

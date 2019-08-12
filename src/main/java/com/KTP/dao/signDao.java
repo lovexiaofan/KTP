@@ -16,4 +16,8 @@ public interface signDao {
     @Update("update sign set signcode = '签到' where courseno = #{courseno} and sno = #{sno}")
     public void updateSignCode(signModel signModel);
 
+    //输入学生签到码
+    @Update("update sign set signcode = #{signcode} where courseno = #{courseno}")
+    public void updateEnterSignCode(signModel signModel);
+
 }

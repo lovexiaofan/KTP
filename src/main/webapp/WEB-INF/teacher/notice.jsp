@@ -77,7 +77,7 @@
                     <a href="teacherMyCourse"><i class="fa fa-dashboard"></i> 我的课程</a>
                 </li>
                 <li>
-                    <a href="javascript:void(0)" onclick=ws()><i class="fa fa-qrcode"></i> 我的学生</a>
+                    <a href="teacherMyStudent"><i class="fa fa-qrcode"></i> 我的学生</a>
                 </li>
             </ul>
         </div>

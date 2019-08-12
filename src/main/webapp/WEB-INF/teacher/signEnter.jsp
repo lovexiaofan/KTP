@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: zxguo
@@ -10,7 +11,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>教师个人主页</title>
+    <title>输入签到码</title>
     <!-- Bootstrap Styles-->
     <link href="../statics/css/bootstrap.css" rel="stylesheet" />
     <!-- FontAwesome Styles-->
@@ -22,7 +23,7 @@
     <!-- Google Fonts-->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 </head>
-<body>
+<body onload="checkup()">
 <div id="wrapper">
     <nav class="navbar navbar-default top-navbar" role="navigation">
         <div class="navbar-header">
@@ -81,20 +82,38 @@
         </div>
     </nav>
     <!-- /. NAV SIDE  -->
-    <div id="page-wrapper">
+    <div id="page-wrapper" >
         <div id="page-inner">
-            <div class="row">
-                <div class="col-md-12">
-                    <h1 class="page-header">
-                        安排签到<small>考勤签到</small>
-                    </h1>
-                    <ol class="breadcrumb">
-                        <a href="teacherSignEnter" class="btn btn-primary">输入签到码</a>
-                        <a href="teacherSignStatus" class="btn btn-primary">查看签到情况</a>
-                    </ol>
+            <div class="container-fluid">
+                <div class="row">
+                    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+                        <h2>输入课程签到码</h2>
+                        <br/>
+                        <br/>
+                        <div class="table-responsive">
+                            <form method="get" accept-charset="utf-8" action="teacherSignEnterSave">
+                                <div class="mb-3">
+                                    <span>课 程 号:</span>
+                                    <label>
+                                        <input type="text" name="kh" style="margin-top: 10px"/>
+                                    </label>
+                                </div>
+                                <br>
+                                <div class="mb-3">
+                                    <span>签 到 码:</span>
+                                    <label>
+                                        <input type="text" name="qdm" style="margin-top: 10px"/>
+                                    </label>
+                                </div>
+                                <br>
+                                <button type="submit" class="btn btn-primary btn-lg btn-block">输入</button>
+                            </form>
+                        </div>
+                    </main>
                 </div>
             </div>
         </div>
+        <!-- /. PAGE INNER  -->
     </div>
 </div>
 <!-- /. WRAPPER  -->
@@ -113,4 +132,12 @@
 <!-- Custom Js -->
 <script src="../statics/js/custom-scripts.js"></script>
 </body>
+<script>
+    function checkup() {
+        var msg = '<%=request.getAttribute("message")%>';
+        if (msg !== "null"){
+            alert(msg);
+        }
+    }
+</script>
 </html>

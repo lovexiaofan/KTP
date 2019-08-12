@@ -30,4 +30,12 @@ public class signService {
         signDao.updateSignCode(signModel);
     }
 
+    //输入学生签到码
+    public void updateEnterSignCode(String signcode, String courseno){
+        signModel signModel = new signModel();
+        signModel.setSigncode(signcode);
+        signModel.setCourseno(courseno);
+        signDao.updateEnterSignCode(signModel);
+    }
+
 }
