@@ -1,6 +1,8 @@
 package com.KTP.controller;
 
 import com.KTP.service.courseService;
+import com.KTP.service.courseStudentService;
+import com.KTP.service.signService;
 import com.KTP.service.teacherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -25,6 +27,18 @@ public class teacherCloseCourseController {
         this.courseService = courseService;
     }
 
+    private signService signService;
+    @Autowired
+    public void setSignService(signService signService){
+        this.signService = signService;
+    }
+
+    private courseStudentService courseStudentService;
+    @Autowired
+    public void setCourseStudentService(courseStudentService courseStudentService){
+        this.courseStudentService = courseStudentService;
+    }
+
     @RequestMapping(path = "/teacherCloseCourse")
     public String toTeacherCloseCourse(HttpServletRequest request, Model model){
         String cno = (String)request.getSession().getAttribute("cno");
@@ -47,8 +61,14 @@ public class teacherCloseCourseController {
                 request.setAttribute("message", "您输入的课程号有误！");
             }
             else {
-                courseService.deleteCloseCourse(kh);
-                request.setAttribute("message", "成功关闭课程！");
+                try {
+                    courseService.deleteCloseCourse(kh);
+                    signService.deleteSignTeacher(kh);
+                    courseStudentService.deleteCourseStudentTeacher(kh);
+                    request.setAttribute("message", "关闭课程成功！");
+                }catch (Exception e){
+                    request.setAttribute("message", "关闭课程失败！");
+                }
             }
         }
         return "teacher/closeCourse";

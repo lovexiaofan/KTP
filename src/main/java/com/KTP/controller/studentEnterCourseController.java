@@ -2,14 +2,13 @@ package com.KTP.controller;
 
 import com.KTP.service.courseService;
 import com.KTP.service.courseStudentService;
+import com.KTP.service.signService;
 import com.KTP.service.studentService;
-import org.apache.ibatis.annotations.Select;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
 import javax.servlet.http.HttpServletRequest;
 
 @Controller
@@ -33,6 +32,12 @@ public class studentEnterCourseController {
         this.studentService = studentService;
     }
 
+    private signService signService;
+    @Autowired
+    public void setSignService(signService signService){
+        this.signService = signService;
+    }
+
     @RequestMapping(path = "/studentEnterCourse")
     public String toStudentEnterCourse(HttpServletRequest request, Model model){
         String sno = (String)request.getSession().getAttribute("sno");
@@ -53,6 +58,7 @@ public class studentEnterCourseController {
         else {
             try {
                 courseStudentService.insertCourseStudent(kh, cno, sno);
+                signService.insertSignStudent(kh, sno);
                 request.setAttribute("message", "加入成功！");
             }catch (Exception e){
                 request.setAttribute("message", "您已经添加该课程！");

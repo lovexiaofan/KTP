@@ -21,4 +21,8 @@ public interface courseStudentDao {
     @Delete("delete from coursestudent where sno = #{sno} and courseno = #{courseno}")
     public void deleteCourseStudent(courseStudentModel courseStudentModel);
 
+    //教师关闭课程
+    @Delete("delete from coursestudent where courseno = #{courseno}")
+    public void deleteCourseStudentTeacher(courseStudentModel courseStudentModel);
+
 }

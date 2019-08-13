@@ -39,4 +39,11 @@ public class courseStudentService {
         courseStudentDao.deleteCourseStudent(courseStudentModel);
     }
 
+    //教师关闭课程
+    public void deleteCourseStudentTeacher(String courseno){
+        courseStudentModel courseStudentModel = new courseStudentModel();
+        courseStudentModel.setCourseno(courseno);
+        courseStudentDao.deleteCourseStudentTeacher(courseStudentModel);
+    }
+
 }

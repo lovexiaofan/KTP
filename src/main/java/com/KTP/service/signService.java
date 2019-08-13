@@ -38,4 +38,27 @@ public class signService {
         signDao.updateEnterSignCode(signModel);
     }
 
+    //学生加入课程
+    public void insertSignStudent(String courseno, String sno){
+        signModel signModel = new signModel();
+        signModel.setCourseno(courseno);
+        signModel.setSno(sno);
+        signDao.insertSignStudent(signModel);
+    }
+
+    //学生退出课程
+    public void deleteSignStudent(String courseno, String sno){
+        signModel signModel = new signModel();
+        signModel.setCourseno(courseno);
+        signModel.setSno(sno);
+        signDao.deleteSignStudent(signModel);
+    }
+
+    //教师关闭课程
+    public void deleteSignTeacher(String courseno){
+        signModel signModel = new signModel();
+        signModel.setCourseno(courseno);
+        signDao.deleteSignTeacher(signModel);
+    }
+
 }
