@@ -1,0 +1,43 @@
+KTP项目开发技术总结：
+
+#开发框架采用SpringMVC框架#
+SpringMVC采用Spring框架，是面向切面进行编程，分别Controller前端控制器（控制层）、Service逻辑层（业务层）、Dao数据库层（采用MyBatis整合方法）、Model模型层（创建数据库JavaBean实体类）。
+SpringMVC采用注解的方式来告知servlet服务器不同的java类是属于哪一层，作用是什么。
+
+#前台#
+    在SpringMVC中采用jsp页面作为前端页面，jsp页面既支持HTML方法，也支持Java方法，是jsp页面的优势。
+    <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>作为头文件，同时允许在页面中读取model中封装的数据。
+    对于非集合的model封装数据，可以直接采用${名称}进行显示。
+    对于List集合类型的model封装数据，采用<c:forEach items="${名称}" var="自定义名称"></c:forEach>进行读取，在头尾标签中间，利用${自定义名称.属性名}读取详细的变量值。
+    对于需要接受数据库返回的jsp页面，在<body>标签中增加onload方法，通过var msg = '<%=request.getAttribute("名称")%>'获取数据库返回的信息后，通过alert方法展示。
+#后台#
+    #Model类#
+        每个Model类对应数据库的一张表，每个私有变量对应表中的每个属性（一列）。SpringMVC采用了Model层来代替Spring框架中的JavaBean实体类。
+        Model层的getter和setter方法自动生成，可以在逻辑层中读取或注入值。
+        Model层变量类型与数据库存储类型对应关系：
+        Model           MySQL
+        String          char/varchar
+        Integer         int
+        Date            date
+    #Dao类#
+        每个Dao类同样对应数据库的一张表，采用MyBatis方法（不同于Hibernate方法），可以直接书写sql语句对于数据库进行操作。
+        Dao层的java类采用Interface接口类，便于Service逻辑层调用，变量设置方法为#{属性}。
+        Dao层的注解为@Mapper。
+        @Select对应数据库的读取操作，如果返回单一属性和类型则可以返回String、Integer、Date等类型，如果返回的是数据表中多个属性的值，采用Model类集合List<Model>
+        @Insert对应数据库的插入操作，返回类型为void。
+        @Update对应数据库的更新操作，返回类型为void。
+        @Delete对应数据库的删除操作，返回类型为void。
+    #Service类#
+        每个Service类也是对应数据库的一张表，调用Dao接口。
+        Service层的注解为@Service。
+        如果Dao接口需要参数，那么在Service方法中根据参数变量和属性在方法参数部分进行设计。
+        利用对应数据表的Model类中的setter方法，进行参数注入，之后调用Dao接口对数据库操作。
+    #Controller类#
+        每个Controller类对应的是前台的每一个页面，页面中所有的操作都调用Service方法。
+        Controller层的注解为@Controller。
+        通过@RequestMapping(path="/xxx")标记页面的链接，通过方法中的return方法，将前端控制器的操作映射到对应目录下的jsp页面。
+        每一个@RequestMapping都对应了不同的前端控制器页面，可以返回同一个或不同的页面，也可以利用redirect重定向到其他页面。
+        利用@RequestParam("*name*")根据jsp控件name获取对应jsp页面的参数之后注入Service方法对数据库操作。
+        HttpServletRequest方法是在不同Controller类中（不同页面中）进行参数的传递，利用request.getSession.addAttribute("名称","变量")塞入数据，利用request.getSession.getAttribute("名称","变量")取出数据。
+        HttpServletRequest方法可以将数据库的try-catch操作结果，返回到前端jsp页面进行显示，传递方法是request.setAttribute("名称","信息")。
+        Model方法用来将数据库中获取的数据，封装到model中传递到前端jsp页面，方法是model.setAttribute("名称","内容")，无论是何种类型的值都可以直接传递。

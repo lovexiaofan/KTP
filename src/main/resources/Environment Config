@@ -1,0 +1,11 @@
+开发环境：
+1、JDK官网下载配置JDK12.0.1
+2、Maven官网下载配置Maven3.6.1
+3、MySQL官网下载配置MySQL8.0.17
+4、IDEA安装Enterprise版本
+
+部署过程：
+1、将sql文件导入mysql数据库中，数据库名称为ktp；
+2、利用IDEA打开项目，打开File-P，Project Structure中Project SDK选择安装的JDK12，将Project Language Level调整级别为12；
+3、点击Add new configuration，选择Tomcat Server-Local，Development中选择KTP:war，完成部署；
+4、调整applicationContext.xml中关于连接池的配置，设置user为mysql数据库用户名，password为mysql数据库密码
